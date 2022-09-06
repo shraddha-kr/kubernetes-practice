@@ -1,1 +1,27 @@
 kubectl get pods
+
+kubectl run nginx --image=nginx
+
+kubectl describe pod nginx 
+
+kubectl get pods -o wide (node details)
+
+Running containers in Pod/Total no of containers in a Pod
+
+kubectl delete pod webapp
+
+kubectl edit pod redis
+
+kubectl apply -f redis-definition.yaml
+
+kubectl create -f rc-definition.yml
+
+kubectl get replicationcontroller
+
+kubectl get replicaset
+
+kubectl replace -f replicaset-definition.yml
+
+kubectl scale --replicas=6 -f replicaset-definition.yml
+
+kubectl scale --replicas=6 replicaset(TYPE) myapp-replicaset(NAME)
