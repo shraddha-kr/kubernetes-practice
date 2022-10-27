@@ -27,3 +27,36 @@ kubectl scale --replicas=6 -f replicaset-definition.yml
 kubectl scale --replicas=6 replicaset(TYPE) myapp-replicaset(NAME)
 
 kubectl delete replicaset myapp-replicaset (also deletes all underlying pods)
+
+kubectl delete pod myapp-replicaset-8xll(Name of the Pod)
+
+kubectl edit replicaset myapp-replicaset
+#Create Deployments
+kubectl create -f deployment-definition.yml
+
+#List Deployments
+kubectl get deployments
+
+kubectl get replicaset
+
+kubectl get all
+
+#Rollout
+kubectl rollout status deployment/myapp-deployment
+
+kubectl rollout history deployment/myapp-deployment
+#Rolling update is the default rollout strategy, other strategy is recreate
+#In rolling update the scaling is done one at a time, while in recreate the replicas come down to 0 and then are scaled back to the new no.
+#upgrade - makes new replica set will a rolling update
+
+#Rollback
+kubectl rollout undo deployment/myapp-deployment
+
+#Update
+kubectl set image deployment/my-app-deployment nginx=nginx:1.9.1
+kubectl apply -f eployment-definition.yml
+
+#Record the change
+kubectl create -f deployment-definition.yaml --record
+
+#Strategy [Recreate/RollingUpdate]
