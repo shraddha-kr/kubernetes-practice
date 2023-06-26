@@ -1,4 +1,6 @@
 Replication Controller
+?
+?
 
 Networking
 https://www.geeksforgeeks.org/network-address-translation-nat/
